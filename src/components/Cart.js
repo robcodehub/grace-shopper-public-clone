@@ -76,10 +76,15 @@ class _Cart extends React.Component {
   render() {
     const { id, items } = this.state;
     const { auth, orders } = this.props;
+
+    if (auth.id === undefined) {
+      console.log("=============NO AUTH=============")
+    }
+
     if (id === undefined) {
       return (
         <div>
-          You have gone through the chekout process for your previous order and have no active cart at this time. <br/>
+          You have gone through the checkout process for your previous order and have no active cart at this time. <br/>
           If you wish to continue to shop, take a look at our {<Link to='/products'>Products</Link>}
         </div>);
     }
@@ -97,7 +102,7 @@ class _Cart extends React.Component {
       .toFixed(2);
     return (
       <div>
-        <h2>{auth.firstName}'s Shopping Cart</h2>
+        <h2>{auth.id ? auth.firstName: "Guest"}'s Shopping Cart</h2>
             Order # {id} <br />
             Order Status: In Progress...
           <div id="cartProducts">

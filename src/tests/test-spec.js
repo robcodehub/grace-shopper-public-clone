@@ -1,5 +1,8 @@
+
 const { expect } = require("chai");
 const db = require("../../db/db");
+
+
 
 //Supertest for routes and api testing
 //const app = require('supertest')(require('../../server/server.js'))
@@ -40,6 +43,8 @@ describe("ACME Store", () => {
 
   });
 });
+
+
 
 //Started testing API and routes
 
